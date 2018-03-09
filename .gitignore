@@ -5,3 +5,7 @@ CpDF.Interface/bin/
 CpDF.Logger/bin/
 CpDF.Logger/obj/
 CpDF.TestApp/bin/
+CpDF.Factory/bin/
+CpDF.Factory/obj/
+CpDF.SQLiteLibrary/bin/
+CpDF.SQLiteLibrary/obj/

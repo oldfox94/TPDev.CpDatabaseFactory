@@ -11,7 +11,7 @@ namespace CpDF.Interface
         public static LogData WriteInfo(string function, string message, bool onlyBallonTipp = false, int debugLevel = DebugLevelConstants.Unknow, string logId = "", int initialDebugLevel = DebugLevelConstants.Medium, bool onlyConsoleOutput = false, bool onlyReturnLogData = false)
         {
             if (Logger == null)
-                Logger = new DbLogger(Environment.CurrentDirectory, "DbFactory", logId, initialDebugLevel, onlyConsoleOutput);
+                Logger = new DbLogger(Environment.CurrentDirectory, "CpDF.Factory", logId, initialDebugLevel, onlyConsoleOutput);
 
             var data = new LogData
             {
@@ -25,7 +25,7 @@ namespace CpDF.Interface
         public static LogData WriteWarning(string function, string source, string message, int debugLevel = DebugLevelConstants.Unknow, string logId = "", int initialDebugLevel = DebugLevelConstants.Medium, bool onlyConsoleOutput = false, bool onlyReturnLogData  = false)
         {
             if (Logger == null)
-                Logger = new DbLogger(Environment.CurrentDirectory, "DbFactory", logId, initialDebugLevel, onlyConsoleOutput);
+                Logger = new DbLogger(Environment.CurrentDirectory, "CpDF.Factory", logId, initialDebugLevel, onlyConsoleOutput);
 
             var data = new LogData
             {
@@ -40,7 +40,7 @@ namespace CpDF.Interface
         public static LogData WriteError(LogData data, int debugLevel = DebugLevelConstants.Unknow, string logId = "", int initialDebugLevel = DebugLevelConstants.Medium, bool onlyConsoleOutput = false, bool onlyReturnLogData = false)
         {
             if (Logger == null)
-                Logger = new DbLogger(Environment.CurrentDirectory, "DbFactory", logId, initialDebugLevel, onlyConsoleOutput);
+                Logger = new DbLogger(Environment.CurrentDirectory, "CpDF.Factory", logId, initialDebugLevel, onlyConsoleOutput);
 
             return Logger.WriteError(data, debugLevel, onlyReturnLogData);
         }

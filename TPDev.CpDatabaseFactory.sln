@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CpDF.Interface", "CpDF.Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpDF.Logger", "CpDF.Logger\CpDF.Logger.csproj", "{FAF889DD-C24C-4F9C-BCEB-1D3974911858}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpDF.Factory", "CpDF.Factory\CpDF.Factory.csproj", "{93C87BDA-5920-4057-999A-D4D6ED40C19F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpDF.SQLiteLibrary", "CpDF.SQLiteLibrary\CpDF.SQLiteLibrary.csproj", "{5F01994A-3553-4C22-BCEA-F4B0F0B3048D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{FAF889DD-C24C-4F9C-BCEB-1D3974911858}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF889DD-C24C-4F9C-BCEB-1D3974911858}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF889DD-C24C-4F9C-BCEB-1D3974911858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93C87BDA-5920-4057-999A-D4D6ED40C19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93C87BDA-5920-4057-999A-D4D6ED40C19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93C87BDA-5920-4057-999A-D4D6ED40C19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93C87BDA-5920-4057-999A-D4D6ED40C19F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F01994A-3553-4C22-BCEA-F4B0F0B3048D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F01994A-3553-4C22-BCEA-F4B0F0B3048D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F01994A-3553-4C22-BCEA-F4B0F0B3048D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F01994A-3553-4C22-BCEA-F4B0F0B3048D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

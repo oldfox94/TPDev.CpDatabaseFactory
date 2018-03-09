@@ -1,5 +1,7 @@
 ﻿using CpDF.Interface.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CpDF.Interface.Helpers
 {
@@ -87,6 +89,49 @@ namespace CpDF.Interface.Helpers
 
             sql = string.Format(@"INSERT INTO {0}({1}) values({2})", tableName, columns, values);
             return sql;
+        }
+
+        public static string GetUpdateSqlScript(DataTable tbl, bool setModifyOn = true)
+        {
+            var sql = string.Empty;
+            foreach(DataRow dr in tbl.Rows)
+            {
+                if (dr.RowState != DataRowState.Modified) continue;
+
+                var data = new Dictionary<string, string>();
+                foreach (DataColumn col in tbl.Columns)
+                {
+                    data.Add(col.ColumnName, dr[col.ColumnName].ToString());
+                }
+                sql += GetUpdateSqlFieldScript(data, setModifyOn) + ", ";
+            }
+            sql = sql.Substring(0, sql.Length - 1);
+
+            return sql;
+        }
+        public static string GetUpdateSqlScript(string tableName, Dictionary<string, string> data, bool setModifyOn = true)
+        {
+            var columnValuePair = GetUpdateSqlFieldScript(data, setModifyOn);
+            var sql = string.Format(@"UPDATE {0} SET {1}", tableName, columnValuePair);
+            return sql;
+        }
+
+        private static string GetUpdateSqlFieldScript(Dictionary<string, string> data, bool setModifyOn = true)
+        {
+            string columnValuePair = "";
+
+            ColumnHelper.SetDefaultColumnValues(data);
+            if (setModifyOn)
+            {
+                if (data.ContainsKey(DbCIC.ModifyOn)) data[DbCIC.ModifyOn] = DateTime.Now.ToString();
+            }
+
+            foreach (KeyValuePair<string, string> val in data)
+            {
+                columnValuePair += string.Format(@" {0} = '{1}',", val.Key.ToString(), ConvertionHelper.CleanStringForSQL(val.Value));
+            }
+            columnValuePair = columnValuePair.Substring(0, columnValuePair.Length - 1);
+            return columnValuePair;
         }
     }
 }

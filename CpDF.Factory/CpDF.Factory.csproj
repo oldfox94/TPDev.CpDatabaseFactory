@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CpDF.Interface\CpDF.Interface.csproj" />
+    <ProjectReference Include="..\CpDF.Logger\CpDF.Logger.csproj" />
+    <ProjectReference Include="..\CpDF.SQLiteLibrary\CpDF.SQLiteLibrary.csproj" />
+  </ItemGroup>
+
+</Project>
