@@ -1,0 +1,7 @@
+.vs/
+CpDF.Interface/obj/
+CpDF.TestApp/obj/
+CpDF.Interface/bin/
+CpDF.Logger/bin/
+CpDF.Logger/obj/
+CpDF.TestApp/bin/
